@@ -1,0 +1,353 @@
+@import '../../../index.scss';
+
+.process-section {
+  padding: 0;
+
+  .section-container {
+    background: $bg-secondary;
+    margin: 50px auto;
+    padding: 60px 50px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 1400px;
+  }
+
+  .process-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+    .process-title {
+      font-size: 45px;
+      font-weight: 600;
+      line-height: 1.2;
+      color: white;
+      margin: 0 0 10px 0;
+    }
+
+    .section-description {
+      font-size: 16px;
+      line-height: 1.6;
+      color: white;
+      font-weight: 500;
+      margin: 0 auto 50px auto;
+      max-width: 700px;
+    }
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch;
+    margin-bottom: 0;
+  }
+
+  .step-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background: $white;
+    gap: 10px;
+    text-align: center;
+    padding: 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+
+    .step-label {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: $primary;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 3px solid white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      z-index: 2;
+    }
+
+    .step-title {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: $text-secondary;
+    }
+
+    .step-description {
+      font-size: 14px;
+      color: $text-secondary;
+      font-weight: 500;
+      margin: 0;
+      max-width: 250px;
+    }
+  }
+
+  .whatsapp-booking-wrapper {
+    display: none;
+    justify-content: center;
+    margin-top: 50px;
+
+    .btn {
+      min-width: 300px;
+      padding: 14px 28px;
+      font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .process-section {
+    .section-container {
+      margin: 50px auto;
+      padding: 50px 40px;
+    }
+
+    .process-wrapper {
+      .process-title {
+        font-size: 36px;
+      }
+
+      .section-description {
+        font-size: 17px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .steps-grid {
+      gap: 15px;
+    }
+
+    .step-card {
+      padding: 20px 10px 10px 10px;
+      gap: 5px;
+
+      .step-label {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        top: -20px;
+      }
+
+      .step-title {
+        font-size: 16px;
+      }
+
+      .step-description {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .process-section {
+    .section-container {
+      margin: 50px auto;
+      padding: 50px 30px;
+    }
+
+    .process-wrapper {
+      .process-title {
+        font-size: 36px;
+        margin-bottom: 15px;
+      }
+
+      .section-description {
+        font-size: 16px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    .step-card {
+      padding: 35px 15px 25px 15px;
+
+      .step-label {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+        top: -28px;
+      }
+
+      .step-title {
+        font-size: 20px;
+      }
+
+      .step-description {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .process-section {
+    .section-container {
+      margin: 50px 20px;
+      padding: 50px 25px;
+    }
+
+    .process-wrapper {
+      .process-title {
+        font-size: 32px;
+        margin-bottom: 15px;
+      }
+
+      .section-description {
+        font-size: 16px;
+        margin-bottom: 50px;
+      }
+    }
+
+    .steps-grid {
+      grid-template-columns: 1fr;
+      gap: 50px;
+    }
+
+    .step-card {
+      padding: 35px 20px 25px 20px;
+
+      .step-label {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+        top: -30px;
+      }
+
+      .step-title {
+        font-size: 22px;
+      }
+
+      .step-description {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .process-section {
+    .section-container {
+      margin: 30px 0px;
+      padding: 40px 20px;
+    }
+
+    .process-wrapper {
+      .process-title {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .section-description {
+        font-size: 15px;
+        margin-bottom: 40px;
+      }
+    }
+
+    .steps-grid {
+      gap: 45px;
+    }
+
+    .step-card {
+      padding: 20px 10px 15px 10px;
+
+      .step-label {
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
+        top: -28px;
+      }
+
+      .step-title {
+        font-size: 22px;
+      }
+
+      .step-description {
+        font-size: 15px;
+      }
+    }
+
+    .whatsapp-booking-wrapper {
+      display: flex;
+
+      .book-now-btn {
+        background: $primary;
+        color: $white;
+        border: none;
+        font-weight: 500;
+        font-size: 18px;
+        padding: 12px 40px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        min-width: 200px;
+        width: 100%;
+        border-radius: 15px;
+
+        .btn-icon {
+          font-size: 30px;
+        }
+
+        &:hover {
+          background: #45d9a0;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(80, 230, 175, 0.3);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .process-section {
+
+    .process-wrapper {
+      .process-title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 12px;
+      }
+
+      .section-description {
+        font-size: 14px;
+        margin-bottom: 35px;
+      }
+    }
+
+    .steps-grid {
+      gap: 40px;
+    }
+
+    .step-card {
+      padding: 30px 12px 20px 12px;
+
+      .step-label {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+        top: -25px;
+      }
+
+      .step-title {
+        font-size: 18px;
+      }
+
+      .step-description {
+        font-size: 14px;
+      }
+    }
+  }
+}

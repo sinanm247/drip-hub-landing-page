@@ -1,0 +1,727 @@
+@import '../../index.scss';
+
+.drip-detail-page {
+  margin-top: 50px;
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 80px 0;
+
+  .drip-detail-container {
+    // max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px;
+
+    .drip-detail-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: start;
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .drip-image-section {
+      background: #F6F7F9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0px;
+      height: 100%;
+      border-radius: 10px;
+
+      .drip-detail-image {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        object-fit: contain;
+        border-radius: 10px;
+      }
+    }
+
+    .drip-info-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 30px 20px 30px 20px;
+
+      .category-badge {
+        display: inline-block;
+        background: rgba(#D9DEFA, 0.45);
+        color: $text-secondary;
+        padding: 6px 50px;
+        border-radius: 50px;
+        font-size: 20px;
+        font-weight: 500;
+        width: fit-content;
+      }
+
+      .drip-detail-title {
+        font-size: 42px;
+        font-weight: 500;
+        color: $text-secondary;
+        margin: 0;
+        line-height: 1.2;
+        max-width: 400px;
+      }
+
+      .drip-description {
+        font-size: 16px;
+        line-height: 1.6;
+        color: $black;
+        margin: 0;
+      }
+
+      .key-metrics {
+        display: flex;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        .metric-item {
+          margin-top: 20px;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          .image-container {
+            width: 17px;
+            height: 17px;
+            background: $primary;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .metric-icon {
+              width: 10px;
+              height: 10px;
+              object-fit: contain;
+            }
+          }
+
+          .metric-text {
+            font-size: 16px;
+            font-weight: 400;
+            color: $text-secondary;
+          }
+        }
+      }
+
+      .drip-pricing-section {
+        display: flex;
+        align-items: baseline;
+        gap: 15px;
+
+        .drip-price-currency {
+          font-size: 20px;
+          font-weight: 500;
+          color: $text-secondary;
+          margin-right: 10px;
+        }
+
+        .drip-current-price-large {
+          font-size: 30px;
+          font-weight: 600;
+          color: $text-secondary;
+        }
+
+        .drip-original-price-large {
+          font-size: 24px;
+          font-weight: 500;
+          color: #999;
+          text-decoration: line-through;
+        }
+      }
+
+      .tabbed-section {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .tab-headers {
+          display: flex;
+          border-bottom: none;
+          width: 100%;
+
+          .tab-header {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            width: 100%;
+
+            .tab-title {
+              font-size: 22px;
+              font-weight: 500;
+              color: rgba($text-secondary, 0.3);
+              transition: color 0.3s ease;
+            }
+
+            .tab-underline {
+                height: 2px;
+                width: 100%;
+                transition: width 0.3s ease, background-color 0.3s ease;
+                background: rgba($text-secondary, 0.5);
+            }
+
+            &.active {
+              .tab-title {
+                color: $text-secondary;
+              }
+
+              .tab-underline {
+                width: 100%;
+              }
+            }
+
+            &:first-child.active .tab-underline {
+              background: rgba($text-secondary, 1);
+            }
+
+            &:last-child.active .tab-underline {
+              background: rgba($text-secondary, 1);
+            }
+
+            &:hover .tab-title {
+              color: $text-secondary;
+            }
+          }
+        }
+
+        .tab-content {
+          padding-top: 10px;
+          min-height: 220px;
+          position: relative;
+
+          .section-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            min-height: 220px;
+          }
+
+          .nutrients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            .nutrient-badge {
+              display: inline-block;
+              background: white;
+              color: $text-secondary;
+              padding: 6px 16px;
+              border-radius: 50px;  
+              font-size: 13px;
+              font-weight: 500;
+              border: 1px solid $primary;
+            }
+          }
+
+          .helps-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+
+            .helps-badge {
+              display: inline-block;
+              background: white;
+              color: $text-secondary;
+              padding: 6px 16px;
+              border-radius: 50px;  
+              font-size: 13px;
+              font-weight: 500;
+              border: 1px solid $primary;
+            }
+            
+          }
+        }
+      }
+
+      .perfect-for-section {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .perfect-for-title {
+          font-size: 22px;
+          font-weight: 500;
+          color: $text-secondary;
+          margin: 0;
+        }
+
+        .perfect-for-list {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+
+          .perfect-for-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .perfect-for-arrow {
+              width: 15px;
+              height: 15px;
+              object-fit: contain;
+            }
+
+            .perfect-for-text {
+              font-size: 14px;
+              color: $text-secondary;
+              line-height: 1.5;
+            }
+          }
+        }
+      }
+
+      .helps-desc {
+        font-size: 16px;
+        color: $text-secondary;
+        line-height: 1.5;
+      }
+
+      .action-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 10px;
+        width: 90%;
+
+        .btn {
+          border: none;
+          padding: 8px 30px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-size: 18px;
+          font-weight: 500;
+        }
+
+        .book-online-btn {
+          background: #1A2F8A;
+          color: white;
+          flex: 1;
+
+          &:hover {
+            box-shadow: 0 4px 12px rgba(61, 89, 183, 0.3);
+          }
+        }
+
+        .whatsapp-btn-detail {
+          background: $primary;
+          color: $text-secondary;
+          flex: 1;
+
+          .btn-icon {
+            font-size: 20px;
+          }
+
+          &:hover {
+            background: #25c55a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(46, 208, 101, 0.3);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .drip-detail-page {
+    .drip-detail-container {
+      padding: 0 50px;
+
+      .drip-detail-content {
+        gap: 40px;
+        padding: 40px;
+      }
+
+      .drip-info-section {
+        .drip-detail-title {
+          font-size: 32px;
+        }
+
+        .key-metrics {
+          gap: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 968px) {
+  .drip-detail-page {
+    padding: 60px 0;
+
+    .drip-detail-container {
+      padding: 0 30px;
+
+      .drip-detail-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 30px;
+      }
+
+      .drip-image-section {
+        .drip-detail-image {
+          max-width: 400px;
+        }
+      }
+
+      .drip-info-section {
+        .drip-detail-title {
+          font-size: 28px;
+        }
+
+        .key-metrics {
+          gap: 15px;
+        }
+
+        .action-buttons {
+          flex-direction: column;
+
+          .book-online-btn,
+          .whatsapp-btn-detail {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .drip-detail-page {
+    background: #EDF0F5;
+    padding: 20px 0;
+    margin-top: 100px;
+
+    .drip-detail-container {
+      padding: 0 15px;
+
+      .drip-detail-content {
+        padding: 15px;
+        border-radius: 10px;
+        gap: 20px;
+      }
+
+      .drip-image-section {
+        padding: 10px;
+
+        .drip-detail-image {
+          max-width: 100%;
+        }
+      }
+
+      .drip-info-section {
+        gap: 10px;
+        padding: 10px 0;
+
+        .category-badge {
+          padding: 4px 20px;
+          font-size: 14px;
+        }
+
+        .drip-detail-title {
+          font-size: 20px;
+          line-height: 1.3;
+        }
+
+        .drip-description {
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        .key-metrics {
+          gap: 15px;
+          margin-top: 10px;
+
+          .metric-item {
+            margin-top: 0;
+            gap: 6px;
+
+            .image-container {
+              width: 14px;
+              height: 14px;
+
+              .metric-icon {
+                width: 8px;
+                height: 8px;
+              }
+            }
+
+            .metric-text {
+              font-size: 13px;
+            }
+          }
+        }
+
+        .drip-pricing-section {
+          gap: 10px;
+
+          .drip-price-currency {
+            font-size: 16px;
+            margin-right: 5px;
+          }
+
+          .drip-current-price-large {
+            font-size: 24px;
+          }
+
+          .drip-original-price-large {
+            font-size: 16px;
+          }
+        }
+
+        .tabbed-section {
+          margin-top: 15px;
+          gap: 15px;
+
+          .tab-headers {
+            gap: 20px;
+
+            .tab-header {
+              gap: 6px;
+
+              .tab-title {
+                font-size: 16px;
+              }
+
+              .tab-underline {
+                height: 2px;
+              }
+            }
+          }
+
+          .tab-content {
+            padding-top: 8px;
+            min-height: 220px;
+
+            .section-content {
+              gap: 15px;
+              min-height: 220px;
+            }
+
+            .nutrients-grid {
+              gap: 8px;
+
+              .nutrient-badge {
+                font-size: 11px;
+                padding: 5px 12px;
+              }
+            }
+
+            .helps-grid {
+              gap: 8px;
+
+              .helps-badge {
+                font-size: 11px;
+                padding: 5px 12px;
+              }
+            }
+          }
+        }
+
+        .perfect-for-section {
+          gap: 10px;
+
+          .perfect-for-title {
+            font-size: 16px;
+          }
+
+          .perfect-for-list {
+            gap: 4px;
+
+            .perfect-for-item {
+              gap: 8px;
+
+              .perfect-for-arrow {
+                width: 12px;
+                height: 12px;
+              }
+
+              .perfect-for-text {
+                font-size: 12px;
+                line-height: 1.4;
+              }
+            }
+          }
+        }
+
+        .helps-desc {
+          font-size: 13px;
+          line-height: 1.4;
+        }
+
+        .action-buttons {
+          gap: 10px;
+          margin-top: 15px;
+          width: 100%;
+
+          .btn {
+            padding: 10px 20px;
+            font-size: 14px;
+            border-radius: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .drip-detail-page {
+    padding: 15px 0;
+    margin-top: 90px;
+
+    .drip-detail-container {
+      padding: 0 12px;
+
+      .drip-detail-content {
+        padding: 12px;
+        gap: 15px;
+      }
+
+      .drip-image-section {
+        padding: 8px;
+
+        .drip-detail-image {
+          max-width: 100%;
+          height: 250px;
+        }
+      }
+
+      .drip-info-section {
+        padding: 8px 0;
+        gap: 8px;
+
+        .category-badge {
+          padding: 4px 25px;
+          font-size: 16px;
+          border-radius: 10px;
+        }
+
+        .drip-detail-title {
+          font-size: 30px;
+          max-width: 300px;
+        }
+
+        .drip-description {
+          font-size: 13px;
+        }
+
+        .key-metrics {
+          gap: 12px;
+
+          .metric-item {
+            .image-container {
+              width: 12px;
+              height: 12px;
+
+              .metric-icon {
+                width: 7px;
+                height: 7px;
+              }
+            }
+
+            .metric-text {
+              font-size: 12px;
+            }
+          }
+        }
+
+        .drip-pricing-section {
+          .drip-price-currency {
+            font-size: 14px;
+          }
+
+          .drip-current-price-large {
+            font-size: 22px;
+          }
+
+          .drip-original-price-large {
+            font-size: 14px;
+          }
+        }
+
+        .tabbed-section {
+          margin-top: 12px;
+          gap: 12px;
+
+          .tab-headers {
+            gap: 0px;
+
+            .tab-header {
+              .tab-title {
+                font-size: 15px;
+              }
+            }
+          }
+
+          .tab-content {
+            min-height: 155px;
+
+            .section-content {
+              gap: 12px;
+              min-height: 155px;
+            }
+
+            .nutrients-grid,
+            .helps-grid {
+              gap: 6px;
+
+              .nutrient-badge,
+              .helps-badge {
+                font-size: 10px;
+                padding: 4px 10px;
+              }
+            }
+          }
+        }
+
+        .perfect-for-section {
+          gap: 8px;
+
+          .perfect-for-title {
+            font-size: 15px;
+          }
+
+          .perfect-for-list {
+            .perfect-for-item {
+              .perfect-for-arrow {
+                width: 10px;
+                height: 10px;
+              }
+
+              .perfect-for-text {
+                font-size: 11px;
+              }
+            }
+          }
+        }
+
+        .helps-desc {
+          font-size: 12px;
+        }
+
+        .action-buttons {
+          flex-direction: row;
+          gap: 8px;
+          margin-top: 0px;
+
+          .btn {
+            padding: 9px 18px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+}
+
