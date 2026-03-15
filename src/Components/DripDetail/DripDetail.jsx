@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { drips } from "../../Datasets/dripsDataset";
-import { useBookingModal } from "../../Context/BookingModalContext";
 import { FaWhatsapp } from "react-icons/fa";
 import "./DripDetail.scss";
 
@@ -14,8 +13,6 @@ import arrow from "../../assets/Icons/icon-12.png";
 
 const DripDetail = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const { openModal } = useBookingModal();
   const [activeTab, setActiveTab] = useState("nutrients");
   
   const drip = drips.find((d) => d.id === parseInt(id));
@@ -173,9 +170,14 @@ const DripDetail = () => {
 
             {/* Action Buttons */}
             <div className="action-buttons">
-              <button className="btn book-online-btn" onClick={openModal}>
-                Book Online
-              </button>
+              <a 
+                href="tel:+971503890119" 
+                className="btn call-now-btn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Call Now
+              </a>
               <a 
                 href="https://wa.me/971503890119" 
                 className="btn whatsapp-btn-detail" 

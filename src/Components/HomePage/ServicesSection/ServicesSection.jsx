@@ -1,10 +1,8 @@
 import "./ServicesSection.scss";
 import { drips } from "../../../Datasets/dripsDataset";
-import { useBookingModal } from "../../../Context/BookingModalContext";
 import { useNavigate } from "react-router-dom";
 
 const ServicesSection = () => {
-  const { openModal } = useBookingModal();
   const navigate = useNavigate();
 
   const handleDripClick = (dripId) => {
@@ -44,7 +42,7 @@ const ServicesSection = () => {
                     className="btn drip-book-btn" 
                     onClick={(e) => {
                       e.stopPropagation();
-                      openModal();
+                      handleDripClick(drip.id);
                     }}
                   >
                     Book Now

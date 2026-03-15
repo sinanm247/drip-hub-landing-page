@@ -302,10 +302,15 @@
           font-weight: 500;
         }
 
-        .book-online-btn {
+        .book-online-btn,
+        .call-now-btn {
           background: #1A2F8A;
           color: white;
           flex: 1;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
 
           &:hover {
             box-shadow: 0 4px 12px rgba(61, 89, 183, 0.3);
@@ -387,6 +392,7 @@
           flex-direction: column;
 
           .book-online-btn,
+          .call-now-btn,
           .whatsapp-btn-detail {
             width: 100%;
           }

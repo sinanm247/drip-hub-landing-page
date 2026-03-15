@@ -6,8 +6,6 @@ import icon3 from "../../../assets/Icons/icon-3.png";
 import icon4 from "../../../assets/Icons/icon-4.png";
 import icon5 from "../../../assets/Icons/icon-5.png";
 import icon6 from "../../../assets/Icons/icon-6.png";
-import { useBookingModal } from "../../../Context/BookingModalContext";
-
 const features = [
   {
     id: 1,
@@ -48,7 +46,9 @@ const features = [
 ];
 
 const WhyChooseUsSection = () => {
-  const { openModal } = useBookingModal();
+  const scrollToServices = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section id="why-choose-us" className="why-choose-us-section">
@@ -80,7 +80,7 @@ const WhyChooseUsSection = () => {
             <div className="booking-wrapper">
               <button 
                 className="btn book-now-btn" 
-                onClick={openModal}
+                onClick={scrollToServices}
               >
                 Book Now
               </button>
